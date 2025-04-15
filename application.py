@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 import joblib
 import pandas as pd
@@ -39,12 +39,24 @@ major_map = {
 }
 
 # === Flask app setup ===
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
 
 @app.route("/")
 def home():
-    return jsonify({"message": "Cineversity API is up and running!"})
+    return render_template("index.html")
+
+@app.route("/recommendation.html")
+def recommendation():
+    return render_template("recommendation.html")
+
+@app.route("/result.html")
+def result():
+    return render_template("result.html")
+
+@app.route("/static/<path:filename>")
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
 
 @app.route("/recommend")
 def recommend():
@@ -72,7 +84,11 @@ def recommend():
     if matched.empty:
         return jsonify({"error": "Movie not found in this major/cohort."}), 404
 
-    movie_idx = matched["original_index"].values[0]
+    try:
+        movie_idx = matched["original_index"].values[0]
+    except IndexError:
+        return jsonify({"error": "Movie index not found."}), 404
+
     sim_scores = cosine_similarity(tfidf_matrix[movie_idx], tfidf_matrix).flatten()
 
     group_indices = filtered["original_index"].unique()
