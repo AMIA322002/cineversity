@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template, send_from_directory
-from flask_cors import CORS
 import joblib
 import pandas as pd
 import numpy as np
@@ -42,7 +41,6 @@ major_map = {
 
 # === Flask app setup ===
 app = Flask(__name__, static_folder="static", template_folder="templates")
-CORS(app)
 
 @app.route("/")
 def home():
