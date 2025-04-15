@@ -22,6 +22,7 @@ if 'log_rating_count' not in movies.columns:
 
 # === Load cohort-major combinations ===
 cohort_major = pd.read_csv(r"data/cohort_major_recommendations.csv", usecols=["cohort", "major"])
+# === real path fix ===
 movies["key"] = 1
 cohort_major["key"] = 1
 movies = pd.merge(movies, cohort_major, on="key").drop("key", axis=1)
@@ -136,6 +137,7 @@ def feedback():
 
         # Save feedback to CSV
         feedback_file = r"data/cohort_major_recommendations.csv"
+        # === real path fix ===
         file_exists = os.path.isfile(feedback_file)
         with open(feedback_file, mode="a", newline="") as file:
             writer = csv.writer(file)
