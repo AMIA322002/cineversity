@@ -12,8 +12,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # === Load the bundled model and components ===
 model_path = os.path.join(BASE_DIR, "cineversity", "models", "cineversity_recommender_model.pkl")
-bundle = joblib.load(model_path)
-
+bundle = bundle = joblib.load("models/cineversity_recommender_model.pkl")
 tfidf_vectorizer = bundle["tfidf"]
 tfidf_matrix = bundle["tfidf_matrix"]
 rating_model = bundle["model"]
