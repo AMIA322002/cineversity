@@ -4,15 +4,12 @@ import joblib
 import pandas as pd
 import numpy as np
 import csv
-import os
 from sklearn.metrics.pairwise import cosine_similarity
-
-# === Setup base path ===
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+import os
+from time import time
 
 # === Load the bundled model and components ===
-model_path = os.path.join(BASE_DIR, "cineversity", "models", "cineversity_recommender_model.pkl")
-bundle = bundle = joblib.load("models/cineversity_recommender_model.pkl")
+bundle = joblib.load("models/cineversity_recommender_model.pkl")
 tfidf_vectorizer = bundle["tfidf"]
 tfidf_matrix = bundle["tfidf_matrix"]
 rating_model = bundle["model"]
@@ -23,8 +20,7 @@ if 'log_rating_count' not in movies.columns:
     movies["log_rating_count"] = np.log1p(movies["rating_count"])
 
 # === Load cohort-major combinations ===
-cohort_major_path = os.path.join(BASE_DIR, "cineversity", "data", "cohort_major_recommendations.csv")
-cohort_major = pd.read_csv(cohort_major_path, usecols=["cohort", "major"])
+cohort_major = pd.read_csv(r"cineversity\data\cohort_major_recommendations.csv", usecols=["cohort", "major"])
 movies["key"] = 1
 cohort_major["key"] = 1
 movies = pd.merge(movies, cohort_major, on="key").drop("key", axis=1)
@@ -127,18 +123,19 @@ def feedback():
     try:
         data = request.get_json()
 
+        # Extract feedback details
         major = data.get("major")
         cohort = data.get("cohort")
         favorite_movie = data.get("favoriteMovie")
-        feedback_type = data.get("feedbackType")
+        feedback_type = data.get("feedbackType")  # "like" or "dislike"
         recommendations = data.get("recommendations", [])
 
         if not all([major, cohort, favorite_movie, feedback_type]):
             return jsonify({"message": "Missing feedback data"}), 400
 
-        feedback_file = os.path.join(BASE_DIR, "cineversity", "data", "user_feedback.csv")
+        # Save feedback to CSV
+        feedback_file = r"cineversity\data\user_feedback.csv"
         file_exists = os.path.isfile(feedback_file)
-
         with open(feedback_file, mode="a", newline="") as file:
             writer = csv.writer(file)
             if not file_exists:
