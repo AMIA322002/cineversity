@@ -7,14 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (logo) {
         logo.style.cursor = "pointer";
         logo.addEventListener("click", () => {
-            window.location.href = "../templates/index.html";
+            window.location.href = "/";
         });
     }
 
-    // === cineversity\templates\index.html ===
-    if (path.includes("index.html")) {
+    // === INDEX.HTML ===
+    if (path.includes("index.html") || path === "/") {
         const button = document.querySelector(".get-rec-button");
-
         button?.addEventListener("click", () => {
             const favoriteMovie = document.querySelector(".movie-input")?.value;
             const major = document.querySelector(".input-major")?.value;
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("major", major);
             localStorage.setItem("cohort", cohort);
 
-            window.location.href = "../templates/recommendation.html";
+            window.location.href = "/recommendation.html";
         });
     }
 
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!storedMovie || !storedMajor || !storedCohort) {
             alert("Missing input. Please go back and fill the form.");
-            window.location.href = "../templates/index.html";
+            window.location.href = "/index.html";
             return;
         }
 
@@ -87,16 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
         };
 
-        // Fetch recommendations once on initial load
         fetchRecommendations(storedMovie, storedMajor, storedCohort);
 
-        // Debounced re-fetch on button click
         let fetchCooldown = false;
 
         button?.addEventListener("click", () => {
             if (fetchCooldown) return;
             fetchCooldown = true;
-            setTimeout(() => fetchCooldown = false, 1500); // 1.5 sec cooldown
+            setTimeout(() => fetchCooldown = false, 1500);
 
             const fav = favoriteMovieInput?.value;
             const major = majorInput?.value;
@@ -114,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
             fetchRecommendations(fav, major, cohort);
         });
 
-        // Feedback buttons
         const likeButton = document.querySelector(".like-button");
         const dislikeButton = document.querySelector(".dislike-button");
 
@@ -140,7 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .then(data => {
                     console.log("Feedback sent successfully:", data);
-                    window.location.href = "../templates/result.html"; // Redirect to result.html
+                    window.location.href = "/result.html";
+
                 })
                 .catch(err => {
                     console.error("Error sending feedback:", err);
