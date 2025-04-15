@@ -10,6 +10,7 @@ from time import time
 
 # === Load the bundled model and components ===
 bundle = joblib.load("models/cineversity_recommender_model.pkl")
+# === REAL BUNDLE LOAD ===
 tfidf_vectorizer = bundle["tfidf"]
 tfidf_matrix = bundle["tfidf_matrix"]
 rating_model = bundle["model"]
