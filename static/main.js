@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (cohortInput) cohortInput.value = storedCohort;
 
         const fetchRecommendations = (title, major, cohort) => {
-            const apiURL = `http://127.0.0.1:5000/recommend?title=${encodeURIComponent(title)}&major=${major}&cohort=${cohort}`;
+        const apiURL = `https://cineversity.onrender.com/recommend?title=${encodeURIComponent(title)}&major=${major}&cohort=${cohort}`;
 
             fetch(apiURL)
                 .then(res => {
