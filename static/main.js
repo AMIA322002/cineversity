@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 recommendations: JSON.parse(localStorage.getItem("recommendations")) || []
             };
 
-            fetch("http://127.0.0.1:5000/feedback", {
+            fetch("https://cineversity.onrender.com/feedback", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
