@@ -21,7 +21,7 @@ if 'log_rating_count' not in movies.columns:
     movies["log_rating_count"] = np.log1p(movies["rating_count"])
 
 # === Load cohort-major combinations ===
-cohort_major = pd.read_csv(r"cineversity\data\cohort_major_recommendations.csv", usecols=["cohort", "major"])
+cohort_major = pd.read_csv(r"data/cohort_major_recommendations.csv", usecols=["cohort", "major"])
 movies["key"] = 1
 cohort_major["key"] = 1
 movies = pd.merge(movies, cohort_major, on="key").drop("key", axis=1)
@@ -135,7 +135,7 @@ def feedback():
             return jsonify({"message": "Missing feedback data"}), 400
 
         # Save feedback to CSV
-        feedback_file = r"cineversity\data\user_feedback.csv"
+        feedback_file = r"data/cohort_major_recommendations.csv"
         file_exists = os.path.isfile(feedback_file)
         with open(feedback_file, mode="a", newline="") as file:
             writer = csv.writer(file)
