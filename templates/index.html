@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineversity - Home</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+<body>
+    <div class="frame-3">
+        <div class="glassmorph">
+            <!-- Logo -->
+            <img class="logo" src="../static/LOGO.png" alt="Cineversity Logo" />
+            <div class="call-to-action">
+                cinemas for the academics.
+            </div>
+            <div class="note">
+                *Please be noted that not all movies are available at this site as it is using a dataset of movies from the latest of 2018.
+            </div>
+            <div class="cineversity-description">
+                Cineversity is an intelligent web-based movie recommendation system designed specifically for university students, 
+                leveraging hybrid machine learning to provide personalized movie suggestions. 
+                By integrating collaborative filtering (CF) and content-based filtering (CBF) techniques, 
+                the system effectively overcomes common recommendation challenges, such as the cold-start problem and data sparsity.
+            </div>
+            <!-- Quote Section -->
+            <div class="quote">
+                <p>“Every viewer is going to get a different thing.  
+                That's the thing about painting, photography, cinema.”</p>
+                <p class="author">- David Lynch</p>
+            </div>
+            <!-- Favorite Movie Input -->
+            <div class="fav-mov-text-input">
+                <div class="favorite-movie">Favorite Movie:</div>
+                <input type="text" class="movie-input" placeholder="Enter your favorite movie">
+            </div>
+            <!-- Major Dropdown -->
+            <div class="major-dropdown">
+                <label for="major-select" class="major">Major:</label>
+                <select id="major-select" class="input-major">
+                    <option value=""    disabled selected>Select your major</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="information-systems">Information Systems</option>
+                    <option value="visual-communication-design">Visual Communication Design</option>
+                    <option value="mechanical-engineering">Mechanical Engineering</option>
+                    <option value="industrial-engineering">Industrial Engineering</option>
+                    <option value="management">Management</option>
+                    <option value="accounting">Accounting</option>
+                    <option value="english-education">English Education</option>
+                    <option value="psychology">Psychology</option>
+                </select>
+                
+              </div>
+            <!-- Cohort Dropdown -->
+            <div class="cohort-dropdown">
+                <label for="cohort-select" class="cohort">Cohort:</label>
+                <select id="cohort-select" class="input-cohort">
+                    <option value="" disabled selected>Select your cohort</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+            <!-- Get Recommendation Button -->
+            <button class="get-rec-button">
+                <svg class="paper-plane-solid-1" width="104" height="104" viewBox="0 0 104 104" fill="none">
+                    <g clip-path="url(#clip0)">
+                        <path d="M100.985 1.33542C103.029 2.75176 104.101 5.20001 103.717 7.64826L90.7673 91.8195C90.4638 93.7821 89.27 
+                        95.502 87.5299 
+                        96.4732C85.7899 97.4444 83.7058 97.5658 81.8646 96.7969L57.6653 86.7409L43.8054 101.734C42.0046 103.697 
+                        39.172 104.344 36.6832 
+                        103.373C34.1945 102.402 32.5758 99.9938 32.5758 97.323V80.4078C32.5758 79.5984 32.8793 78.8296 33.4257 
+                        78.2226L67.3369 
+                        41.2358C68.5105 39.9611 68.47 37.9985 67.256 36.7844C66.042 35.5704 64.0793 35.4895 62.8046 36.6428L21.6498 
+                        73.2047L3.78363 
+                        64.2615C1.63888 63.1891 0.263003 61.0444 0.202303 58.6568C0.141602 56.2693 1.39608 54.0436 3.45989 52.8498L94.1058 
+                        1.05215C96.2708 -0.182094 98.9416 -0.0606928 100.985 1.33542Z" fill="white" />
+                    </g>
+                </svg>
+                <div class="get-recommendation">Get<br />Recommendation!</div>
+            </button>
+        </div>            
+    </div>
+     <!-- RESULT FROM BACKEND API -->
+    <script src="../static/main.js"></script>
+</body>
+</html>

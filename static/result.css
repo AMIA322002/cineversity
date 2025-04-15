@@ -1,0 +1,226 @@
+/* ===== RESET & BASE STYLES ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0011ff;
+  }
+  
+  /* ===== GLASSMORPHISM CONTAINER (EXACT POSITION) ===== */
+  .glassmorph {
+    background: rgba(255, 255, 255, 0.26);
+    border-radius: 16px;
+    width: 1804px; /* Kept original */
+    height: 906px; /* Kept original */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* ===== LOGO (EXACT POSITION) ===== */
+  .logo {
+    width: 1000px; /* Kept original */
+    height: 190px; /* Kept original */
+    position: absolute;
+    top: 50px; /* Kept original */
+    right: 775px; /* Kept original */
+    object-fit: cover;
+  }
+  
+  /* ===== TEXT ELEMENTS (EXACT POSITION) ===== */
+  .call-to-action, .quote, .cineversity-description {
+    color: #ffffff;
+    font-family: 'Lato-Regular', sans-serif;
+    font-weight: 400;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  
+  .call-to-action {
+    font-size: 16px;
+    left: 450px; /* Kept original */
+    top: 244px; /* Kept original */
+    text-align: justify; /* Fixed typo (was 'justified') */
+  }
+  .note {
+    align-items: center;
+    text-align: justify;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-weight: 600;
+    position: relative;
+    font-size: 40px;
+    letter-spacing: 0.07em;
+    left: 1100px; /* Kept original */
+    top: 794.5px; /* Kept original */
+    width: 560px; /* Kept original */
+    color: #ffffff;
+    display: flex;
+  }
+  
+  .cineversity-description {
+    font-size: 20px;
+    letter-spacing: 0.07em;
+    left: 1031.5px; /* Kept original */
+    top: 71.5px; /* Kept original */
+    width: 741px; /* Kept original */
+  }
+/* In result.css, modify the quote and author styles to match index.css */
+.quote {
+  font-family: 'TimesNewRoman-Italic', sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  text-decoration: underline;
+  left: 1031.5px; /* Match index.html */
+  top: 400px; /* Match index.html */
+  width: 739px; /* Match index.html */
+  height: 149px; /* Match index.html */
+}
+
+.author {
+  color: #ffffff;
+  font-family: 'Lato-Regular', sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+  left: -0.1px; /* Match index.html */
+  top: 60px; /* Match index.html */
+  width: 739px; /* Match index.html */
+  height: 149px; /* Match index.html */
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+  /* ===== DROPDOWNS & INPUTS (EXACT POSITION) ===== */
+  .cohort-dropdown {
+    width: 828px; /* Kept original */
+    height: 124px; /* Kept original */
+    position: absolute;
+    left: 164px; /* Kept original */
+    top: 357px; /* Kept original */
+  }
+  
+  .major-dropdown {
+    width: 828px; 
+    height: 125px;
+    position: absolute;
+    left: 164px; /* Unchanged */
+    top: 490px;  /* Unchanged */
+  }
+  
+  .fav-mov-text-input {
+    width: 894px; /* Kept original */
+    height: 133px; /* Kept original */
+    position: absolute;
+    left: 164px; /* Kept original */
+    top: 642px; /* Kept original */
+  }
+  /* ===== UNIFIED INPUT STYLES ===== */
+  .input-cohort, .input-major, .movie-input {
+    /* Shared styles */
+    background: #ffffff;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    left: -100px; /* Default for all */
+  
+    /* Individual overrides */
+    width: 900px;
+    height: 63px;
+    border-radius: 10px;
+  }
+  
+  /* Cohort-specific adjustments */
+  .input-cohort {
+    top: -40px;
+  }
+  
+  /* Major-specific adjustments */
+  .input-major {
+    top: -20px;
+  }
+  
+  /* Movie-input specific adjustments */
+  .movie-input {
+    width: 894px;
+    height: 76px;
+    top: -20px;
+    border-radius: 20px; /* Override default 10px */
+  }
+  
+  /* Labels (fixed redundancy) */
+  .cohort, .major, .favorite-movie {
+    color: #ffffff;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-size: 40px; /* Kept original */
+    font-weight: 600; /* Kept original */
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cohort {
+    left: -100px; /* Kept original */
+    top: -100px; /* Kept original */
+  }
+  
+  .major {
+    left: -100px; /* Kept original */
+    top: -80px; /* Kept original */
+  }
+  
+  .favorite-movie {
+    left: -100px; /* Kept original */
+    top: -80px; /* Kept original */
+  }
+  
+  /* ===== BUTTON (EXACT POSITION + FIXES) ===== */
+  .get-rec-button {
+    background: #153ae9;
+    border-radius: 35px;
+    width: 815px; /* Kept original */
+    height: 142px; /* Kept original */
+    position: absolute;
+    left: 110px; /* Kept original */
+    top: 735px; /* Kept original */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none; /* Kept original */
+    padding: 0 47px; /* Kept original */
+  }
+  
+  .get-rec-button:hover {
+    background: #0d2cb5;
+    transform: scale(1.02);
+  }
+  
+  .get-rec-button:active {
+    background: #09249c;
+    transform: scale(0.98);
+  }
+  .get-recommendation {
+    position: absolute; /* Required for left positioning */
+    left: 239px; /* Original 104px + 100px = 204px */
+    color: #ffffff;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+    font-size: 58px;
+    font-weight: 600;
+  }
+  
+  .paper-plane-solid-1 {
+    width: 103.8px; /* Kept original */
+    height: 104px; /* Kept original */
+    position: absolute;
+    left: 47px; /* Kept original */
+    top: 19px; /* Kept original */
+    overflow: visible;
+    aspect-ratio: 103.8/104; /* Added for modern browsers */
+  }
