@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cineversity - Recommendation </title>
-  
-    <link rel="stylesheet" href="../static/recommendation.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommendation.css') }}">
 </head>
 <body>
     <div class="frame-3">
         <div class="glassmorph">
             <!-- Logo -->
-            <a href="index.html">
-                <img class="logo" src="../static/LOGO.png" alt="Cineversity Logo" />
-              </a>
+            <img class="logo" src="{{ url_for('static', filename='LOGO.png') }}" alt="Cineversity Logo" />
+            <div class="call-to-action">
+                cinemas for the academics.
+            </div>
             <!-- Call to Action -->
             <div class="call-to-action">
                 cinemas for the academics.
@@ -103,6 +103,5 @@
     </div>
   </div>            
     </div>
-    <script src="../static/main.js"></script>
-</body>
+    <script src="{{ url_for('static', filename='main.js') }}"></script></body>
 </html>
