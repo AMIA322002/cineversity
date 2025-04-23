@@ -19,7 +19,7 @@
 <p> Contributions are welcome! If you'd like to contribute, please fork the repository and submit a pull request. </p>
 
 ### License
-This project is licensed under the MIT License.
+<p> This project is licensed under the MIT License. </p>
 
 ### Contact
-For any inquiries or feedback, don't hesitate to get in touch with AMIA322002.
+<p> For any inquiries or feedback, don't hesitate to get in touch with AMIA322002. </p>
