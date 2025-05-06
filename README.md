@@ -15,7 +15,7 @@
 ## Dataset
 <p> The project utilizes the TMDB 5000 Movie Dataset from Kaggle, which includes metadata on approximately 5000 movies from TMDb. This dataset provides information such as plot, cast, crew, budget, and revenues, making it a valuable resource for building a movie recommendation system. </p>
 
-## Dataset
+##  Contributions
 <p> Contributions are welcome! If you'd like to contribute, please fork the repository and submit a pull request. </p>
 
 ## License
